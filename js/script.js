@@ -10,8 +10,16 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 const gridEasy = document.querySelector('.grid-easy');
 
+//devo intercettare le 3 opzioni dell'html
+const easyOpt = document.getElementById('easy');
+const hardOpt = document.getElementById('hard');
+const crazyOpt = document.getElementById('crazy');
+
+
 generateEasyGrid();
 
+
+// creo la funzione per generare la griglia easy
 function generateEasyGrid(tot){
   for(let i = 0; i < 100; i++){
     
@@ -25,7 +33,7 @@ function generateEasyGrid(tot){
   }
 }
 
-
+// creo la funzione per creare un singolo quadrato
 function createSquare (target){
 
   const square = document.createElement('div');
