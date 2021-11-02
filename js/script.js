@@ -10,13 +10,19 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 const gridEasy = document.querySelector('.grid-easy');
 
-for(let i = 0; i < 100; i++){
-  
-  const squareComplete = createSquare(gridEasy);
-  squareComplete[i] = i + 1;
+generateEasyGrid();
 
-  squareComplete.innerHTML = squareComplete[i]
+function generateEasyGrid(tot){
+  for(let i = 0; i < 100; i++){
+    
+    const squareComplete = createSquare(gridEasy);
 
+    squareComplete.innerHTML = i + 1;
+
+    squareComplete.style.width = 'calc(100% / 10)';
+    squareComplete.style.height = 'calc(100% / 10)';
+
+  }
 }
 
 
