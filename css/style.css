@@ -70,6 +70,13 @@ main{
   background-color: #76FFCB;
 }
 
+.text-pre-game{
+  height: calc(100vh - 100px - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* FOOTER */
 
 footer{
