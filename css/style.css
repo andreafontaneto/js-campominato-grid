@@ -76,4 +76,10 @@ footer{
   width: 100vw;
   height: 50px;
   background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+footer a{
+  color: blue;
 }
