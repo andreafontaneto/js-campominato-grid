@@ -7,3 +7,21 @@ con difficoltà 3 => tra 1 e 49
 
 Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 */
+
+const gridEasy = document.querySelector('.grid-easy');
+
+createSquare(gridEasy);
+
+
+
+function createSquare (target){
+
+  const square = document.createElement('div');
+
+  square.className = 'square';
+
+  target.append(square);
+
+  return square;
+
+}
