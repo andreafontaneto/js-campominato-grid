@@ -13,9 +13,11 @@ const gridEasy = document.querySelector('.grid-easy');
 for(let i = 0; i < 100; i++){
   
   const squareComplete = createSquare(gridEasy);
+  squareComplete[i] = i + 1;
+
+  squareComplete.innerHTML = squareComplete[i]
 
 }
-
 
 
 function createSquare (target){
@@ -29,18 +31,3 @@ function createSquare (target){
   return square;
 
 }
-
-
-
-// function generateNumCell (){
-
-//   let counter = 0;
-
-//   for(let i = 0; i < 100; i++){
-//     counter++;
-//     counter = counter + 1;
-//   }
-
-//   return counter;
-// }
-
