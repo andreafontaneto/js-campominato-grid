@@ -10,7 +10,11 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 const gridEasy = document.querySelector('.grid-easy');
 
-createSquare(gridEasy);
+for(let i = 0; i < 100; i++){
+  
+  const squareComplete = createSquare(gridEasy);
+
+}
 
 
 
@@ -25,3 +29,18 @@ function createSquare (target){
   return square;
 
 }
+
+
+
+// function generateNumCell (){
+
+//   let counter = 0;
+
+//   for(let i = 0; i < 100; i++){
+//     counter++;
+//     counter = counter + 1;
+//   }
+
+//   return counter;
+// }
+
