@@ -79,23 +79,19 @@ main{
 
 .text-pre-game{
   height: calc(100vh - 100px - 50px);
-  display: none;
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
 }
 
-.grid-easy{
+.grid{
   width: 500px;
   height: 500px;
-  background-color: cornflowerblue;
   display: flex;
   flex-wrap: wrap;
 }
 
 .square{
-  /* width: calc(100% / 10);
-  height: calc(100% / 10); */
   border: 1px solid black;
   display: flex;
   justify-content: center;

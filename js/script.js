@@ -8,32 +8,40 @@ con difficoltà 3 => tra 1 e 49
 Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 */
 
+// intercetto il div con classe main-content
+const mainContent = document.querySelector('.main-content');
 
 // intercetto il contenitore delle griglie
-const gridEasy = document.querySelector('.grid-easy');
+// const grid = document.querySelector('.grid');
 
 // intercetto il menù con le 3 opzioni dell'html
-const difficulty = document.getElementById('difficulty');
+const difficulty = parseInt(document.getElementById('difficulty').value);
 
 // intercetto il bottone Play
 const playButton = document.querySelector('.btn');
 
 
 // creo le 3 condizioni al click del play
-switch(difficulty.value){
+switch(difficulty){
 
-  case '2':
+  case 1:
     playButton.addEventListener('click', function(){
-    generateHardGrid();
+      mainContent.innerHTML = '';
+      generateEasyGrid();
     })
-  case '3':
+    break;
+  case 2:
     playButton.addEventListener('click', function(){
-    generateCrazyGrid();
+      mainContent.innerHTML = '';
+      generateHardGrid();
     })
-  default:
+    break;
+  case 3:
     playButton.addEventListener('click', function(){
-    generateEasyGrid();
+      mainContent.innerHTML = '';
+      generateCrazyGrid();
     })
+    break;
 }
 
 
@@ -41,9 +49,14 @@ switch(difficulty.value){
 
 // creo la funzione per generare la griglia easy
 function generateEasyGrid(tot){
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  mainContent.append(grid);
+
   for(let i = 0; i < 100; i++){
     
-    const squareComplete = createSquare(gridEasy);
+    const squareComplete = createSquare(grid);
 
     squareComplete.innerHTML = i + 1;
 
@@ -51,13 +64,20 @@ function generateEasyGrid(tot){
     squareComplete.style.height = 'calc(100% / 10)';
 
   }
+
+  return grid;
 }
 
 // creo la funzione per generare la griglia hard
 function generateHardGrid(tot){
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  mainContent.append(grid);
+
   for(let i = 0; i < 81; i++){
     
-    const squareComplete = createSquare(gridEasy);
+    const squareComplete = createSquare(grid);
 
     squareComplete.innerHTML = i + 1;
 
@@ -65,13 +85,20 @@ function generateHardGrid(tot){
     squareComplete.style.height = 'calc(100% / 9)';
 
   }
+
+  return grid;
 }
 
 // creo la funzione per generare la griglia crazy
 function generateCrazyGrid(tot){
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  mainContent.append(grid);
+
   for(let i = 0; i < 49; i++){
     
-    const squareComplete = createSquare(gridEasy);
+    const squareComplete = createSquare(grid);
 
     squareComplete.innerHTML = i + 1;
 
@@ -79,6 +106,8 @@ function generateCrazyGrid(tot){
     squareComplete.style.height = 'calc(100% / 7)';
 
   }
+
+  return grid;
 }
 
 // creo la funzione generale per creare un singolo quadrato
